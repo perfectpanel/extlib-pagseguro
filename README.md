@@ -40,7 +40,7 @@ Instalação via Composer
 ```composer.json
 {
     "require": {
-       "shulyak/pagseguro": "@stable"
+       "perfectpanel/pagseguro": "@stable"
     }
 }
 ```

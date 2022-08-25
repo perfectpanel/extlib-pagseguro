@@ -1,5 +1,5 @@
 {
-    "name": "perfectpanel/extlib-pagseguro",
+    "name": "perfectpanel/pagseguro",
     "description": "Biblioteca de integração com o PagSeguro",
     "license": "Apache License 2.0",
     "autoload": {

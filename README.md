@@ -40,7 +40,7 @@ Instalação via Composer
 ```composer.json
 {
     "require": {
-       "perfectpanel/pagseguro": "@stable"
+       "perfectpanel/pagseguro": "1.0"
     }
 }
 ```

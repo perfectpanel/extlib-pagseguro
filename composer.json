@@ -1,7 +1,7 @@
 {
     "name": "perfectpanel/pagseguro",
     "description": "Biblioteca de integração com o PagSeguro",
-    "license": "Apache License 2.0",
+    "license": "Apache-2.0",
     "autoload": {
         "classmap": ["source/PagSeguroLibrary"]
     },

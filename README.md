@@ -1,7 +1,7 @@
 Biblioteca de integração PagSeguro para PHP
 ===========================================
 
-[![Code Climate](https://codeclimate.com/github/pagseguro/php/badges/gpa.svg)](https://codeclimate.com/github/pagseguro/php)
+ [![Code Climate](https://codeclimate.com/github/pagseguro/php/badges/gpa.svg)](https://codeclimate.com/github/pagseguro/php)
 
 Descrição
 ---------

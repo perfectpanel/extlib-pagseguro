@@ -51,7 +51,7 @@ class PagSeguroPaymentMethodGroups
      */
     public static function isKeyAvailable($key)
     {
-        $key = strtoupper($key);
+        $key = strtoupper((string) $key);
         return (isset(self::$availableGroupList[$key]));
     }
 
@@ -62,7 +62,7 @@ class PagSeguroPaymentMethodGroups
      */
     public static function getDescriptionByKey($key)
     {
-        $key = strtoupper($key);
+        $key = strtoupper((string) $key);
         if (isset(self::$availableGroupList[$key])) {
             return self::$availableGroupList[$key];
         } else {
@@ -77,6 +77,6 @@ class PagSeguroPaymentMethodGroups
      */
     public static function getGroupByDescription($description)
     {
-        return array_search(strtolower($description), array_map('strtolower', self::$availableGroupList));
+        return array_search(strtolower((string) $description), array_map('strtolower', self::$availableGroupList));
     }
 }

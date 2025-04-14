@@ -66,7 +66,7 @@ class PagSeguroSenderDocument
      */
     public function setType($type)
     {
-        $this->type = strtoupper($type);
+        $this->type = strtoupper((string) $type);
     }
 
     /***

@@ -25,10 +25,10 @@ class NotificationListener
     public static function main()
     {
 
-        $code = (isset($_POST['notificationCode']) && trim($_POST['notificationCode']) !== "" ?
-            trim($_POST['notificationCode']) : null);
-        $type = (isset($_POST['notificationType']) && trim($_POST['notificationType']) !== "" ?
-            trim($_POST['notificationType']) : null);
+        $code = (isset($_POST['notificationCode']) && trim((string) $_POST['notificationCode']) !== "" ?
+            trim((string) $_POST['notificationCode']) : null);
+        $type = (isset($_POST['notificationType']) && trim((string) $_POST['notificationType']) !== "" ?
+            trim((string) $_POST['notificationType']) : null);
 
         if ($code && $type) {
 

@@ -56,7 +56,7 @@ class CancelPreApproval
     {
 
         if ($response) {
-            echo utf8_decode("<h2>Response:</h2>");
+            echo mb_convert_encoding("<h2>Response:</h2>", 'ISO-8859-1');
             echo "<p><strong> Date: </strong>".$response->getRegistrationDate() ."</p> ";
             echo "<p><strong> Status: </strong>".$response->getStatus() ."</p> ";
         }

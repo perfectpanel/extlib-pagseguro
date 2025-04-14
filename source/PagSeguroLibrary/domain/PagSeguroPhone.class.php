@@ -99,7 +99,7 @@ class PagSeguroPhone
     {
         /** We clean the string that is coming. Can be formatted or not */
 
-        $number = preg_replace("/[^0-9]/", '', $number);
+        $number = preg_replace("/[^0-9]/", '', (string) $number);
         $number = $number[0] == 0 ? substr($number, 1) : $number;
 
         $number = str_split($number, 1);

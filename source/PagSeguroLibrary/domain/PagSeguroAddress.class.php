@@ -106,7 +106,7 @@ class PagSeguroAddress
      * Initializes a new instance of the Address class
      * @param array $data
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         if (isset($data['postalCode'])) {
             $this->postalCode = $data['postalCode'];
@@ -278,16 +278,16 @@ class PagSeguroAddress
     private function treatState($defaultState)
     {
 
-        if (strlen($defaultState) == 2) {
+        if (strlen((string) $defaultState) == 2) {
             foreach (self::$acronyms as $key => $val) {
-                if ($val == strtoupper($defaultState)) {
-                    return strtoupper($defaultState);
+                if ($val == strtoupper((string) $defaultState)) {
+                    return strtoupper((string) $defaultState);
                 }
             }
             return '';
         }
 
-        $state = utf8_decode($defaultState);
+        $state = mb_convert_encoding($defaultState, 'ISO-8859-1');
         $state = strtolower($state);
 
         // Code ASCII of the vowel
@@ -314,7 +314,7 @@ class PagSeguroAddress
 
         $state = preg_replace(array_values($change), array_keys($change), $state);
 
-        $state = preg_replace("/\s/", "", $state);
+        $state = preg_replace("/\s/", "", (string) $state);
 
         foreach (self::$acronyms as $key => $val) {
             if ($key == $state) {

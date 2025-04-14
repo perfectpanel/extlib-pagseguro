@@ -57,7 +57,7 @@ class PagSeguroMetaDataItemKeys
      */
     public static function isItemKeyAvailable($itemKey)
     {
-        $itemKey = strtoupper($itemKey);
+        $itemKey = strtoupper((string) $itemKey);
         return (isset(self::$availableItemKeysList[$itemKey]));
     }
 
@@ -68,7 +68,7 @@ class PagSeguroMetaDataItemKeys
      */
     public static function getItemDescriptionByKey($itemKey)
     {
-        $itemKey = strtoupper($itemKey);
+        $itemKey = strtoupper((string) $itemKey);
         if (isset(self::$availableItemKeysList[$itemKey])) {
             return self::$availableItemKeysList[$itemKey];
         } else {
@@ -83,6 +83,6 @@ class PagSeguroMetaDataItemKeys
      */
     public static function getItemKeyByDescription($itemDescription)
     {
-        return array_search(strtolower($itemDescription), array_map('strtolower', self::$availableItemKeysList));
+        return array_search(strtolower((string) $itemDescription), array_map('strtolower', self::$availableItemKeysList));
     }
 }

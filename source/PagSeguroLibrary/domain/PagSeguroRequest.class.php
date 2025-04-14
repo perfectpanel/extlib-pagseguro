@@ -739,7 +739,7 @@ class PagSeguroRequest
 
         $urlReturn = null;
         foreach ($adress as $item) {
-            $find = strpos($url, $item);
+            $find = strpos((string) $url, $item);
 
             if ($find) {
                 $urlReturn = '';

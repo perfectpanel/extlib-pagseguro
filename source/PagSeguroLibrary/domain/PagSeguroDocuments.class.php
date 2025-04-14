@@ -52,7 +52,7 @@ class PagSeguroDocuments
      */
     public static function isDocumentTypeAvailable($documentType)
     {
-        $documentType = strtoupper($documentType);
+        $documentType = strtoupper((string) $documentType);
         return (isset(self::$availableDocumentList[$documentType]));
     }
 
@@ -63,7 +63,7 @@ class PagSeguroDocuments
      */
     public static function getDocumentByType($documentType)
     {
-        $documentType = strtoupper($documentType);
+        $documentType = strtoupper((string) $documentType);
         if (isset(self::$availableDocumentList[$documentType])) {
             return self::$availableDocumentList[$documentType];
         } else {
@@ -78,6 +78,6 @@ class PagSeguroDocuments
      */
     public static function getDocumentByDescription($documentDescription)
     {
-        return array_search(strtolower($documentDescription), array_map('strtolower', self::$availableDocumentList));
+        return array_search(strtolower((string) $documentDescription), array_map('strtolower', self::$availableDocumentList));
     }
 }

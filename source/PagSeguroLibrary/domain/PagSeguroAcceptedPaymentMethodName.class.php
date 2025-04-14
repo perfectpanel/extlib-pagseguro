@@ -74,7 +74,7 @@ class PagSeguroPaymentMethodName
      */
     public static function isNameAvailable($name)
     {
-        $key = strtoupper($name);
+        $key = strtoupper((string) $name);
         return (isset(self::$availableNameList[$key]));
     }
 
@@ -85,7 +85,7 @@ class PagSeguroPaymentMethodName
      */
     public static function getDescriptionByName($name)
     {
-        $key = strtoupper($name);
+        $key = strtoupper((string) $name);
         if (isset(self::$availableNameList[$key])) {
             return self::$availableNameList[$key];
         } else {
@@ -100,6 +100,6 @@ class PagSeguroPaymentMethodName
      */
     public static function getKeyByDescription($description)
     {
-        return array_search(strtolower($description), array_map('strtolower', self::$availableNameList));
+        return array_search(strtolower((string) $description), array_map('strtolower', self::$availableNameList));
     }
 }

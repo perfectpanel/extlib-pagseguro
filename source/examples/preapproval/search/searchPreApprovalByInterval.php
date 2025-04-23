@@ -54,7 +54,7 @@ class SearchPreApproval
     public static function printResult($result, $initialDate = null, $finalDate = null)
     {
 
-        echo utf8_decode("<h2>Consulta de Assinatura:</h2>");
+        echo mb_convert_encoding("<h2>Consulta de Assinatura:</h2>", 'ISO-8859-1');
         echo "<p><strong> Date: </strong>".$result->getDate() ."</p> ";
         echo "<p><strong> Results in this Page: </strong>".$result->getResultsInThisPage() ."</p> ";
         echo "<p><strong> Total Page: </strong>".$result->getTotalPages() ."</p> ";

@@ -55,7 +55,7 @@ class SearchPreApproval
     {
 
 
-            echo utf8_decode("<h2>Consulta de Assinatura:</h2>");
+            echo mb_convert_encoding("<h2>Consulta de Assinatura:</h2>", 'ISO-8859-1');
             echo "<p><strong> Name: </strong>".$result->getName() ."</p> ";
             echo "<p><strong> Date: </strong>".$result->getDate() ."</p> ";
             echo "<p><strong> LastEventDate: </strong>".$result->getLastEventDate() ."</p> ";

@@ -78,7 +78,7 @@ class PagSeguroPaymentMode
     public static function fromValue($value)
     {
         try {
-            return array_search(strtoupper($value), $this->modeList);
+            return array_search(strtoupper((string) $value), $this->modeList);
         } catch (Exception $e) {
             return null;
         }

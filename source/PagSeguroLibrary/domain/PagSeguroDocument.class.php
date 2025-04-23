@@ -44,7 +44,7 @@ class PagSeguroDocument
      */
     private $value;
 
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         if ($data) {
             if (isset($data['type']) && isset($data['value'])) {
@@ -69,7 +69,7 @@ class PagSeguroDocument
      */
     public function setType($type)
     {
-        $this->type = strtoupper($type);
+        $this->type = strtoupper((string) $type);
     }
 
     /***
@@ -97,6 +97,6 @@ class PagSeguroDocument
      */
     public static function isDocumentTypeAvailable($documentType)
     {
-        return (array_search(strtoupper($documentType), self::$availableDocumentList));
+        return (array_search(strtoupper((string) $documentType), self::$availableDocumentList));
     }
 }

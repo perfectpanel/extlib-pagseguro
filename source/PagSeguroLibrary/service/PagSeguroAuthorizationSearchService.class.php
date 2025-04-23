@@ -155,7 +155,7 @@ class PagSeguroAuthorizationSearchService
      * @throws PagSeguroServiceException
      * @throws Exception
      */
-    public static function searchAuthorizations(PagSeguroCredentials $credentials, array $options = null)
+    public static function searchAuthorizations(PagSeguroCredentials $credentials, ?array $options = null)
     {
         LogPagSeguro::info("PagSeguroAuthorizationSearchService.searchAuthorizations() - begin");
         $connectionData = new PagSeguroConnectionData($credentials, self::SERVICE_NAME);

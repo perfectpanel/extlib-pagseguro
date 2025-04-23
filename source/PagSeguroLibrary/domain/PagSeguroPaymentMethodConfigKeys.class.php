@@ -49,7 +49,7 @@ class PagSeguroPaymentMethodConfigKeys
      */
     public static function isKeyAvailable($configKey)
     {
-        $configKey = strtoupper($configKey);
+        $configKey = strtoupper((string) $configKey);
         return (isset(self::$availableKeyList[$configKey]));
     }
 
@@ -60,7 +60,7 @@ class PagSeguroPaymentMethodConfigKeys
      */
     public static function getDescriptionByKey($configKey)
     {
-        $configKey = strtoupper($configKey);
+        $configKey = strtoupper((string) $configKey);
         if (isset(self::$availableKeyList[$configKey])) {
             return self::$availableKeyList[$configKey];
         } else {
@@ -75,6 +75,6 @@ class PagSeguroPaymentMethodConfigKeys
      */
     public static function getKeyByDescription($configDescription)
     {
-        return array_search(strtolower($configDescription), array_map('strtolower', self::$availableKeyList));
+        return array_search(strtolower((string) $configDescription), array_map('strtolower', self::$availableKeyList));
     }
 }

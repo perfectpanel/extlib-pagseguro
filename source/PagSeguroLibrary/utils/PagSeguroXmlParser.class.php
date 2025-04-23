@@ -71,7 +71,7 @@ class PagSeguroXmlParser
         if (isset($child)) {
             if ($child->nodeName == '#text') {
                 $result = html_entity_decode(
-                    htmlentities($node->nodeValue, ENT_COMPAT, 'UTF-8'),
+                    htmlentities((string) $node->nodeValue, ENT_COMPAT, 'UTF-8'),
                     ENT_COMPAT,
                     'ISO-8859-15'
                 );
@@ -89,7 +89,7 @@ class PagSeguroXmlParser
                         } else {
                             if ($child->nodeName == '0') {
                                 $text = $this->toArray($child);
-                                if (trim($text) != '') {
+                                if (trim((string) $text) != '') {
                                     $result[$child->nodeName] = $this->toArray($child);
                                 }
                             }

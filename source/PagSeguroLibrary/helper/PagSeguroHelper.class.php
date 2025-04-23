@@ -97,7 +97,7 @@ class PagSeguroHelper
      */
     public static function removeStringExtraSpaces($string)
     {
-        return trim(preg_replace("/( +)/", " ", $string));
+        return trim(preg_replace("/( +)/", " ", (string) $string));
     }
 
     /***
@@ -111,12 +111,12 @@ class PagSeguroHelper
     {
 
         if (!is_array($string) && !is_object($string)) {
-            $stringLength = strlen($string);
-            $endcharsLength = strlen($endchars);
+            $stringLength = strlen((string) $string);
+            $endcharsLength = strlen((string) $endchars);
 
             if ($stringLength > (int) $limit) {
                 $cut = (int) ($limit - $endcharsLength);
-                $string = substr($string, 0, $cut) . $endchars;
+                $string = substr((string) $string, 0, $cut) . $endchars;
             }
         }
         return $string;
@@ -170,6 +170,6 @@ class PagSeguroHelper
      */
     public static function getOnlyNumbers($value)
     {
-        return preg_replace('/\D/', '', $value);
+        return preg_replace('/\D/', '', (string) $value);
     }
 }

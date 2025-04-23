@@ -214,7 +214,7 @@ class PagSeguroAuthorizationRequest
         $address = array('127.0.0.1','::1');
 
         foreach ($address as $item) {
-            $find = strpos($url, $item);
+            $find = strpos((string) $url, $item);
 
             if ($find) {
                 return false;

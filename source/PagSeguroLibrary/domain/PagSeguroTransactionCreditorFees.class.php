@@ -36,7 +36,7 @@ class PagSeguroTransactionCreditorFees
     /***
      * @param array|null $value
      */
-    public function __construct(array $value = null)
+    public function __construct(?array $value = null)
     {
         if ($value) {
             $this->setIntermediationRateAmount($value['intermediationRateAmount']);

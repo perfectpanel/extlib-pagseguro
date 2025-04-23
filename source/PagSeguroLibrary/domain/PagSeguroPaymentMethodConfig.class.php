@@ -35,7 +35,7 @@ class PagSeguroPaymentMethodConfig
     /***
      * @param array $config
      */
-    public function __construct(array $config = null)
+    public function __construct(?array $config = null)
     {
         if (!is_null($config) && count($config) > 0) {
             $this->setConfig($config);

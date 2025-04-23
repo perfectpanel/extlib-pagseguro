@@ -66,7 +66,7 @@ class ChargePreApproval
     {
 
         if ($response) {
-            echo utf8_decode("<h2>Response:</h2>");
+            echo mb_convert_encoding("<h2>Response:</h2>", 'ISO-8859-1');
             echo "<p> Transaction code: ".$response->getCode() ."</p> ";
             echo "<p> Registration date: ".$response->getRegistrationDate() ."</p> ";
         }

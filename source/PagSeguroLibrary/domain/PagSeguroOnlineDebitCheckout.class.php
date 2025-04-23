@@ -36,7 +36,7 @@ class PagSeguroOnlineDebitCheckout
      * Initializes a new instance of the PagSeguroOnlineDebitCheckout class
      * @param array $data
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
 
         if ($data) {
